@@ -23,8 +23,8 @@ public class Q10430 {
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");         //구분자 " "로 입력받음
 
         int A = Integer.parseInt(st.nextToken());                                   //첫번째 A에 저장
-        int B = Integer.parseInt(st.nextToken());                                   //첫번째 B에 저장
-        int C = Integer.parseInt(st.nextToken());                                   //첫번째 C에 저장
+        int B = Integer.parseInt(st.nextToken());                                   //두번째 B에 저장
+        int C = Integer.parseInt(st.nextToken());                                   //세번째 C에 저장
 
         System.out.println((A+B)%C);                                                //첫째 줄에 (A+B)%C 출력
         System.out.println(((A%C) + (B%C))%C);                                      //둘째 줄에 ((A%C) + (B%C))%C 출력
