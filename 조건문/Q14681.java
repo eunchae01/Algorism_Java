@@ -23,17 +23,17 @@ public class Q14681 {
 
         sc.close();                             //다 입력받았으니 닫아줌
 
-        if (x > 0){
-            if (y > 0){
-                System.out.println("1");
-            }else {
-                System.out.println("4");
+        if (x > 0){                             //x가 양수고
+            if (y > 0){                         //y도 양수면
+                System.out.println("1");        //제1사분면
+            }else {                             //y는 음수면
+                System.out.println("4");        //제4사분면
             }
-        }else {
-            if (y > 0){
-                System.out.println("2");
-            }else {
-                System.out.println("3");
+        }else {                                 //x가 음수고
+            if (y > 0){                         //y가 양수면
+                System.out.println("2");        //제2사분면
+            }else {                             //y도 음수면
+                System.out.println("3");        //제3사분면
             }
         }
     }
