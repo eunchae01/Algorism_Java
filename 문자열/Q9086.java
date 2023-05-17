@@ -21,7 +21,7 @@ public class Q9086 {
         for (int i = 0; i < T; i++){
             String str = br.readLine();
 
-            bw.write(str.charAt(0) + str.charAt(str.length() - 1) + "\n");
+            bw.write(String.valueOf(str.charAt(0)) + str.charAt(str.length() - 1) + "\n");
         }
         br.close();
         bw.flush();
