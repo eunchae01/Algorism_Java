@@ -20,9 +20,6 @@ import java.util.StringTokenizer;
 
 public class Q2920 {
 	public static void main(String[] args) throws IOException {
-		int[] ascending = {1, 2, 3, 4, 5, 6, 7, 8};
-		int[] descending = {8, 7, 6, 5, 4, 3, 2, 1};
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		
@@ -32,6 +29,8 @@ public class Q2920 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		for (int i = 0; i < 8; i++) {
 		
+		}
 	}
 }

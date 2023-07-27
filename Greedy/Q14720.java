@@ -37,14 +37,25 @@ public class Q14720 {
 		String[] shop = br.readLine().split(" ");
 		
 		int count = 0;
+		String cur = "";
 		
-		/*for(int i = 0; i < N; i++){
-			if(Integer.parseInt(shop[i]) == 0){
+		
+		for(int i = 0; i < N; i++){
+			if(cur.equals("") & shop[i].equals("0")){
 				count++;
-			} else if () {
-				
+				cur = "0";
+			} else if (cur.equals("0") & shop[i].equals("1")) {
+				count++;
+				cur = "1";
+			} else if (cur.equals("1") & shop[i].equals("2")) {
+				count++;
+				cur = "2";
+			} else if (cur.equals("2") & shop[i].equals("0")) {
+				count++;
+				cur = "0";
 			}
-		}*/
+			
+		}
 		
 		System.out.println(count);
 	}
