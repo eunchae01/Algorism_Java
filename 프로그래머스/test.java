@@ -1,33 +1,36 @@
 package 프로그래머스;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
 
 public class test {
 	public static void main(String[] args) throws IOException {
 		Solution solution = new Solution();
-		
-		System.out.println(solution.solution("Bcad"));
-		
-		
+
+		System.out.println(solution.solution("3people unFollowed me"));
+	}
+	
+	static class Solution {
+		public String solution(String s){
+			String answer = "";
+			
+			s = s.toLowerCase();
+			
+			if (Character.isLowerCase(s.charAt(0))){
+				answer += Character.toUpperCase(s.charAt(0));
+			}else {
+				answer += s.charAt(0);
+			}
+			
+			for (int i = 1; i < s.length(); i++) {
+				if (s.charAt(i - 1) == ' ' & s.charAt(i) != ' '){
+					answer += Character.toUpperCase(s.charAt(i));
+				}else {
+					answer += s.charAt(i);
+				}
+			}
+			
+			return answer;
+		}
 	}
 }
 
-class Solution {
-	public String solution(String my_string) {
-		String answer = "";
-		
-		char[] arr = my_string.toCharArray();
-		
-		Arrays.sort(arr);
-		
-		for (char i :
-				arr) {
-			answer += i;
-		}
-		
-		return answer;
-	}
-}
