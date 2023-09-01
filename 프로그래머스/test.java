@@ -6,31 +6,19 @@ public class test {
 	public static void main(String[] args) throws IOException {
 		Solution solution = new Solution();
 
-		System.out.println(solution.solution("3people unFollowed me"));
-	}
-	
-	static class Solution {
-		public String solution(String s){
-			String answer = "";
-			
-			s = s.toLowerCase();
-			
-			if (Character.isLowerCase(s.charAt(0))){
-				answer += Character.toUpperCase(s.charAt(0));
-			}else {
-				answer += s.charAt(0);
-			}
-			
-			for (int i = 1; i < s.length(); i++) {
-				if (s.charAt(i - 1) == ' ' & s.charAt(i) != ' '){
-					answer += Character.toUpperCase(s.charAt(i));
-				}else {
-					answer += s.charAt(i);
-				}
-			}
-			
-			return answer;
-		}
+		String[] arr = {".#...", "..#..", "...#."};
+		
+		System.out.println(solution.solution(arr));
 	}
 }
-
+class Solution {
+	public int[] solution(String[] wallpaper) {
+		int[] answer = new int[4];
+		
+		for (int i = 0; i < wallpaper.length; i++) {
+			
+		}
+		
+		return answer;
+	}
+}
