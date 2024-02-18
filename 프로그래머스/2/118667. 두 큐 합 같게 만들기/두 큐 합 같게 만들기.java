@@ -37,7 +37,7 @@ class Solution {
 
                 q1Sum -= peek;
                 q2Sum += peek;
-            }else if (q1Sum < q2Sum){
+            }else {
                 peek = q2.peek();
 
                 q1.offer(peek);
@@ -45,8 +45,6 @@ class Solution {
 
                 q1Sum += peek;
                 q2Sum -= peek;
-            }else {
-                return answer;
             }
             answer++;
         }
