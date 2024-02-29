@@ -28,17 +28,15 @@ public class Main {
         int bridgeWeight = 0, time = 0;
 
         while (!q.isEmpty()){
-            if (bridgeWeight <= L){ // 다리위에 올라온 트럭 무게가 최대하중보다 낮거나 같으면
-                if (q.peek() + bridgeWeight - bridge.peek() <= L){  // 다음에 올라올 트럭 무게 + 현재 다리위 트럭 무게 확인 후 버틸 수 있으면
-                    time++;                         // 시간 1초 증가
-                    bridgeWeight -= bridge.poll();  // 다리 위 맨 앞 트럭 무게 빼주고
-                    bridge.offer(q.peek());         // q에서(대기중 트럭) 다리 위로 이동
-                    bridgeWeight += q.poll();       // 다리 위 무게에 더해줌
-                }else {
-                    time++;
-                    bridgeWeight -= bridge.poll();
-                    bridge.offer(0);
-                }
+            if (q.peek() + bridgeWeight - bridge.peek() <= L){  // 다음에 올라올 트럭 무게 + 현재 다리위 트럭 무게 확인 후 버틸 수 있으면
+                time++;                         // 시간 1초 증가
+                bridgeWeight -= bridge.poll();  // 다리 위 맨 앞 트럭 무게 빼주고
+                bridge.offer(q.peek());         // q에서(대기중 트럭) 다리 위로 이동
+                bridgeWeight += q.poll();       // 다리 위 무게에 더해줌
+            }else {
+                time++;
+                bridgeWeight -= bridge.poll();
+                bridge.offer(0);
             }
         }
 
