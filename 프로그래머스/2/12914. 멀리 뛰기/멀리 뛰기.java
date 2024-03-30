@@ -12,7 +12,6 @@ class Solution {
             for(int i = 3; i < jump.length; i++){
                 jump[i] = (jump[i - 1] + jump[i - 2]) % 1234567;
             }
-
         }
         
         return jump[n];
