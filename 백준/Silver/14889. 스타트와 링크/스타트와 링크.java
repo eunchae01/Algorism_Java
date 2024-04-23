@@ -24,7 +24,7 @@ public class Main {
         }
     }
 
-    public static int findMin(boolean[] combi){
+    public static void findMin(boolean[] combi){
         int start = 0, link = 0;
 
         for (int i = 0; i < N; i++) {
@@ -40,8 +40,6 @@ public class Main {
         }
 
         diff = Math.min(diff, Math.abs(start - link));
-
-        return diff;
     }
 
     public static void main(String[] args) throws IOException {
