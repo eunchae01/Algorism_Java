@@ -29,23 +29,7 @@ public class Solution {
         return 0;
     }
 
-    static class getValue implements Comparable<getValue>{
-        int key, value;
-
-        getValue(int key, int value){
-            this.key = key;
-            this.value = value;
-        }
-
-        @Override
-        public int compareTo(getValue o) {
-            return o.value;
-        }
-    }
-
     public static int findMax(){
-        PriorityQueue<getValue> q = new PriorityQueue<>(Collections.reverseOrder());
-
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (int a :
@@ -79,4 +63,9 @@ public class Solution {
         return answer;
     }
 
+    public static void main(String[] args) {
+        int[] cards = {8,6,3,7,2,5,1,4};
+
+        solution(cards);
+    }
 }
