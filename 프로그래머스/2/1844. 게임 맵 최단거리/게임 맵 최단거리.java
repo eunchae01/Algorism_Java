@@ -1,43 +1,55 @@
 import java.util.*;
 
 class Solution {
-    static int[] dx = {-1, 0, 1, 0};
-    static int[] dy = {0, 1, 0, -1};
+    static int n, m;
     
-    static class Edge{
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int[][] visit;
+    
+    class Node{
         int x, y;
         
-        Edge(int x, int y){
+        Node(int x, int y){
             this.x = x;
             this.y = y;
         }
     }
     
-    public int solution(int[][] maps) {
-        int answer = -1;
+    public void BFS(int x, int y, int[][] maps){
+        Queue<Node> q = new LinkedList<>();
+        q.offer(new Node(x, y));
         
-        Queue<Edge> q = new LinkedList<>();
-        q.offer(new Edge(0, 0));
+        maps[x][y] = 0;
         
         while(!q.isEmpty()){
-            Edge tmp = q.poll();
+            Node tmp = q.poll();
             
             for(int i = 0; i < 4; i++){
                 int nx = tmp.x + dx[i];
                 int ny = tmp.y + dy[i];
                 
-                if(nx >= 0 && ny >= 0 && nx < maps.length && ny < maps[0].length && maps[nx][ny] == 1){
-                    maps[nx][ny] = maps[tmp.x][tmp.y] + 1;
+                if(nx >= 0 && ny >= 0 && nx < n && ny < m && maps[nx][ny] == 1){
+                    maps[nx][ny] = 0;
                     
-                    q.offer(new Edge(nx, ny));
+                    q.offer(new Node(nx, ny));
+                    
+                    visit[nx][ny] = visit[tmp.x][tmp.y] + 1;
                 }
             }
         }
+    }
+    
+    public int solution(int[][] maps) {
+        n = maps.length;
+        m = maps[0].length;
         
-        if(maps[maps.length - 1][maps[0].length - 1] != 1){
-            answer = maps[maps.length - 1][maps[0].length - 1];
-        }
+        visit = new int[n][m];
+        visit[0][0] = 1;
+        visit[n - 1][m - 1] = -1;
         
-        return answer;
+        BFS(0, 0, maps);
+        
+        return visit[n - 1][m - 1];
     }
 }
