@@ -2,10 +2,10 @@ import java.util.*;
 
 class Solution {
     static int n, m;
+    static int[][] visit;
     
     static int[] dx = {1, 0, -1, 0};
-    static int[] dy = {0, 1, 0, -1};
-    static int[][] visit;
+    static int[] dy = {0, -1, 0, 1};
     
     class Node{
         int x, y;
@@ -31,10 +31,9 @@ class Solution {
                 
                 if(nx >= 0 && ny >= 0 && nx < n && ny < m && maps[nx][ny] == 1){
                     maps[nx][ny] = 0;
+                    visit[nx][ny] = visit[tmp.x][tmp.y] + 1;
                     
                     q.offer(new Node(nx, ny));
-                    
-                    visit[nx][ny] = visit[tmp.x][tmp.y] + 1;
                 }
             }
         }
